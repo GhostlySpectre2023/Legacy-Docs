@@ -1,9 +1,20 @@
-/* Legacy Docs — client-side router, sidebar, search and page rendering.
+/* Legacy Scripts Docs — client-side router, sidebar, search and page rendering.
    Routes: #/                     -> home
            #/<product>            -> product overview (index.md)
            #/<product>/<page>     -> content/<product>/<page>.md
            #/<product>/<page>#id  -> same, scrolled to heading */
 (function () {
+  // ---- Site settings: edit these ----
+  var SITE = {
+    founder: {
+      name: 'GhostlySpectre',
+      role: 'Founder & Lead Developer',
+      bio: 'Started Legacy Scripts to build premium, framework-ready FiveM resources that just work. Every script and every page of these docs comes from here.',
+      avatar: 'assets/img/ls-icon.png'   // swap for a profile picture, e.g. assets/img/founder.png
+    },
+    store: '',     // Tebex store URL — the Store button stays hidden while this is empty
+    discord: ''    // Discord invite URL
+  };
   var MD = window.LegacyMarkdown;
   var $ = function (s) { return document.querySelector(s); };
   var main = $('#main'), sidebar = $('#sidebar'), toc = $('#toc');
@@ -23,11 +34,12 @@
   function icon(name) {
     return '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[name] || ICONS.doc) + '</svg>';
   }
-  var PAGE_ICONS = { index: 'doc', installation: 'download', configuration: 'sliders', api: 'code', faq: 'help', changelog: 'clock' };
+  var PAGE_ICONS = { index: 'doc', installation: 'download', configuration: 'sliders', api: 'code', faq: 'help', changelog: 'clock', about: 'user' };
   ICONS.download = '<path d="M12 4v11M7 10l5 5 5-5"/><path d="M4 20h16"/>';
   ICONS.sliders = '<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>';
   ICONS.code = '<path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/>';
   ICONS.help = '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17v.01"/>';
+  ICONS.user = '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>';
   ICONS.clock = '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>';
 
   // ---------- data ----------
@@ -92,12 +104,12 @@
 
   // ---------- home ----------
   function renderHome() {
-    document.title = 'Legacy Docs';
+    document.title = 'Legacy Scripts Docs';
     toc.innerHTML = '';
     var products = nav.filter(function (p) { return p.slug !== 'general'; });
     var html = '<section class="hero">' +
-      '<span class="eyebrow">Legacy Scripts · Documentation</span>' +
-      '<h1>Everything you need to<br><span class="grad">run Legacy resources</span></h1>' +
+      '<span class="eyebrow">Official documentation</span>' +
+      '<h1>Premium FiveM resources,<br><span class="grad">documented.</span></h1>' +
       '<p>Installation guides, configuration, exports and fixes for every script we release. Pick a product to get started.</p>' +
       '<div class="hero-actions"><a class="btn-primary lg" href="#/general/getting-started">Getting started</a>' +
       '<button class="btn-ghost lg" type="button" data-open-search>Search the docs <kbd>Ctrl K</kbd></button></div>' +
@@ -113,22 +125,34 @@
         '<span class="go">Go to docs <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>' +
         '</div></a>';
     });
-    html += '</section>' +
+    html += '</section>' + founderCard() +
       '<section class="help-strip"><div><h3>Stuck somewhere?</h3><p>Check the FAQ of your product first. Still broken? Open a ticket in our Discord.</p></div>' +
       '<a class="btn-ghost" href="#/general/support">Get support</a></section>';
     main.innerHTML = html + footer();
     main.scrollTo && window.scrollTo(0, 0);
   }
 
+  function founderCard() {
+    var f = SITE.founder;
+    return '<section class="founder" aria-label="Founder">' +
+      '<div class="founder-avatar"><img src="' + MD.escape(f.avatar) + '" alt="' + MD.escape(f.name) + '"></div>' +
+      '<div><span class="founder-label">Founder</span><h3>' + MD.escape(f.name) + '</h3>' +
+      '<div class="founder-role">' + MD.escape(f.role) + ' · Legacy Scripts</div>' +
+      '<p>' + MD.escape(f.bio) + '</p></div>' +
+      '<a class="btn-ghost" href="#/general/about">About Legacy Scripts</a></section>';
+  }
+
   function renderNotFound() {
-    document.title = 'Not found · Legacy Docs';
+    document.title = 'Not found · Legacy Scripts Docs';
     toc.innerHTML = '';
     main.innerHTML = '<article class="doc"><h1>Page not found</h1><p>This page does not exist (anymore). Head back to <a href="#/">all products</a> or use search.</p></article>' + footer();
   }
 
   function footer() {
-    return '<footer class="foot"><span>© ' + new Date().getFullYear() + ' Legacy Scripts · Legacy Roleplay NL</span>' +
-      '<span><a href="https://legacyroleplaynl.nl" target="_blank" rel="noopener">legacyroleplaynl.nl</a></span></footer>';
+    return '<footer class="foot"><span>© ' + new Date().getFullYear() + ' Legacy Scripts · Founded by <b>' + MD.escape(SITE.founder.name) + '</b></span>' +
+      '<span>' + (SITE.discord ? '<a href="' + SITE.discord + '" target="_blank" rel="noopener">Discord</a> · ' : '') +
+      (SITE.store ? '<a href="' + SITE.store + '" target="_blank" rel="noopener">Store</a> · ' : '') +
+      '<a href="#/general/about">About</a></span></footer>';
   }
 
   // ---------- doc page ----------
@@ -153,7 +177,7 @@
         '</nav>';
 
       main.innerHTML = crumbs + '<article class="doc">' + out.html + '</article>' + pager + footer();
-      document.title = (pg.id === 'index' || pg.title === p.title ? p.title : pg.title + ' · ' + p.title) + ' · Legacy Docs';
+      document.title = (pg.id === 'index' || pg.title === p.title ? p.title : pg.title + ' · ' + p.title) + ' · Legacy Scripts Docs';
 
       main.querySelectorAll('[data-anchor]').forEach(function (a) { a.href = base + '#' + a.dataset.anchor; });
       main.querySelectorAll('.doc a[href^="#"]:not([data-anchor])').forEach(function (a) {
@@ -337,6 +361,7 @@
   });
 
   // ---------- boot ----------
+  if (SITE.store) { var sb = $('#storeBtn'); sb.href = SITE.store; sb.hidden = false; }
   window.addEventListener('hashchange', route);
   fetchText('content/nav.json').then(function (t) {
     nav = JSON.parse(t);

@@ -6,7 +6,8 @@
     "pages": [
       { "id": "index", "title": "Welcome" },
       { "id": "getting-started", "title": "Getting Started" },
-      { "id": "support", "title": "Support" }
+      { "id": "support", "title": "Support" },
+      { "id": "about", "title": "About & Founder" }
     ]
   },
   {

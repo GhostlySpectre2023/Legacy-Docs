@@ -3,13 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Legacy Docs</title>
-  <meta name="description" content="Installation guides, configuration, exports and FAQs for all Legacy Scripts FiveM resources.">
-  <meta name="theme-color" content="#0b0a0f">
-  <meta property="og:title" content="Legacy Docs">
+  <title>Legacy Scripts Docs</title>
+  <meta name="description" content="Installation guides, configuration, exports and FAQs for all Legacy Scripts FiveM resources. Founded by GhostlySpectre.">
+  <meta name="author" content="GhostlySpectre">
+  <meta name="theme-color" content="#08090b">
+  <meta property="og:title" content="Legacy Scripts Docs">
+  <meta property="og:site_name" content="Legacy Scripts">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:description" content="Installation guides, configuration, exports and FAQs for all Legacy Scripts resources.">
-  <meta property="og:image" content="https://docs.legacyroleplaynl.nl/assets/img/server_icoon_512.png">
-  <link rel="icon" type="image/png" href="assets/img/server_icoon_512.png">
+  <meta property="og:image" content="https://docs.legacyroleplaynl.nl/assets/img/ls-banner.png">
+  <link rel="icon" type="image/svg+xml" href="assets/img/ls-mark.svg">
+  <link rel="icon" type="image/png" sizes="800x800" href="assets/img/ls-icon.png">
+  <link rel="apple-touch-icon" href="assets/img/ls-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&display=swap">
   <link rel="stylesheet" href="assets/style.css">
   <script>
     try { var t = localStorage.getItem('ld-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -24,8 +32,10 @@
         <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <a href="#/" class="brand">
-        <img src="assets/img/server_icoon_512.png" alt="" width="34" height="34">
-        <span>Legacy<b>Docs</b></span>
+        <svg class="brand-mark" viewBox="219 209 371 382" aria-hidden="true"><path class="m-l" fill="#fff" stroke="none" d="M287 209h50l-57 331h200l-9 51H219z"/><path fill="#f5b800" stroke="none" d="M372 209h218l-9 51H415l-19 115h165l-38 216h-52l29-166H335z"/></svg>
+        <span class="brand-sep"></span>
+        <span class="brand-word"><b>LEGACY</b><small>SCRIPTS</small></span>
+        <span class="brand-tag">DOCS</span>
       </a>
       <button class="search-trigger" id="searchBtn">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -33,9 +43,9 @@
         <kbd>Ctrl K</kbd>
       </button>
       <nav class="top-links">
-        <a href="https://legacyroleplaynl.nl" target="_blank" rel="noopener">Website</a>
+        <a href="#/general/about">About</a>
         <a href="#/general/support">Support</a>
-        <a class="btn-primary" href="https://legacyroleplaynl.nl/winkel.html" target="_blank" rel="noopener">Store
+        <a class="btn-primary" id="storeBtn" href="#" target="_blank" rel="noopener" hidden>Store
           <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a>
         <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
           <svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>

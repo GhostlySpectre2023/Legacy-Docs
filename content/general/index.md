@@ -1,10 +1,10 @@
 # Welcome to Legacy Scripts
 
-Official documentation for the FiveM resources made and sold by Legacy Scripts, the development team behind Legacy Roleplay NL.
+Official documentation for the premium FiveM resources made and sold by Legacy Scripts.
 
 ## What is Legacy Scripts?
 
-Legacy Scripts builds the resources that run on Legacy Roleplay NL and makes them available to other FiveM servers. Every resource is written with the same goals in mind:
+Legacy Scripts is a FiveM development studio founded by **GhostlySpectre**. We build premium resources, battle-tested on live servers, and make them available to every FiveM server. Read more on the [About](#/general/about) page. Every resource is written with the same goals in mind:
 
 - **Server-authoritative.** Prices, permissions, distances and items are checked on the server, not trusted from the client.
 - **Framework-friendly.** Most resources detect Qbox, QBCore or ESX automatically and keep all framework-specific code in an open bridge file.
