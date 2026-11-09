@@ -1,0 +1,123 @@
+[
+  {
+    "slug": "general",
+    "title": "Getting Started",
+    "icon": "home",
+    "pages": [
+      { "id": "index", "title": "Welcome" },
+      { "id": "getting-started", "title": "Getting Started" },
+      { "id": "support", "title": "Support" }
+    ]
+  },
+  {
+    "slug": "scoreboard",
+    "title": "Scoreboard",
+    "icon": "list",
+    "version": "2.0.0",
+    "tagline": "Online players, job counters and IDs above heads",
+    "frameworks": ["Qbox", "QBCore", "ESX"],
+    "pages": [
+      { "id": "index", "title": "Overview" },
+      { "id": "installation", "title": "Installation" },
+      { "id": "configuration", "title": "Configuration" },
+      { "id": "api", "title": "API" },
+      { "id": "faq", "title": "FAQ" },
+      { "id": "changelog", "title": "Changelog" }
+    ]
+  },
+  {
+    "slug": "dealerships",
+    "title": "Dealerships",
+    "icon": "car",
+    "version": "2.2.1",
+    "tagline": "Showrooms, finance, test drives and dealership management",
+    "frameworks": ["Qbox", "QBCore", "ESX"],
+    "pages": [
+      { "id": "index", "title": "Overview" },
+      { "id": "installation", "title": "Installation" },
+      { "id": "configuration", "title": "Configuration" },
+      { "id": "api", "title": "API" },
+      { "id": "faq", "title": "FAQ" },
+      { "id": "changelog", "title": "Changelog" }
+    ]
+  },
+  {
+    "slug": "kassa",
+    "title": "Kassa (POS)",
+    "icon": "cash",
+    "version": "1.0.0",
+    "tagline": "Modular touch-screen cash register with per-shop menus",
+    "frameworks": ["Qbox", "QBCore", "ESX"],
+    "pages": [
+      { "id": "index", "title": "Overview" },
+      { "id": "installation", "title": "Installation" },
+      { "id": "configuration", "title": "Configuration" },
+      { "id": "api", "title": "API" },
+      { "id": "faq", "title": "FAQ" },
+      { "id": "changelog", "title": "Changelog" }
+    ]
+  },
+  {
+    "slug": "altimeter",
+    "title": "Skydive Altimeter",
+    "icon": "parachute",
+    "version": "1.0.0",
+    "tagline": "Analog skydiving altimeter with audible alarms",
+    "frameworks": ["Qbox", "QBCore", "ESX"],
+    "pages": [
+      { "id": "index", "title": "Overview" },
+      { "id": "installation", "title": "Installation" },
+      { "id": "configuration", "title": "Configuration" },
+      { "id": "api", "title": "API" },
+      { "id": "faq", "title": "FAQ" },
+      { "id": "changelog", "title": "Changelog" }
+    ]
+  },
+  {
+    "slug": "handheld",
+    "title": "TACNET Handheld",
+    "icon": "phone",
+    "version": "1.0.0",
+    "tagline": "Tactical handheld and tablet with blue force tracking, UAV and helmet cam",
+    "frameworks": ["Qbox", "QBCore", "ESX"],
+    "pages": [
+      { "id": "index", "title": "Overview" },
+      { "id": "installation", "title": "Installation" },
+      { "id": "configuration", "title": "Configuration" },
+      { "id": "api", "title": "API" },
+      { "id": "faq", "title": "FAQ" },
+      { "id": "changelog", "title": "Changelog" }
+    ]
+  },
+  {
+    "slug": "radio",
+    "title": "Tactical Radio",
+    "icon": "radio",
+    "version": "1.0.0",
+    "tagline": "Short and long range radios, repeaters and encryption on pma-voice",
+    "frameworks": ["Qbox", "QBCore"],
+    "pages": [
+      { "id": "index", "title": "Overview" },
+      { "id": "installation", "title": "Installation" },
+      { "id": "configuration", "title": "Configuration" },
+      { "id": "api", "title": "API" },
+      { "id": "faq", "title": "FAQ" },
+      { "id": "changelog", "title": "Changelog" }
+    ]
+  },
+  {
+    "slug": "loadingscreen",
+    "title": "Loading Screen",
+    "icon": "loader",
+    "version": "3.0.0",
+    "tagline": "Website-styled loading screen with real progress, music and radio",
+    "frameworks": ["Standalone"],
+    "pages": [
+      { "id": "index", "title": "Overview" },
+      { "id": "installation", "title": "Installation" },
+      { "id": "configuration", "title": "Configuration" },
+      { "id": "faq", "title": "FAQ" },
+      { "id": "changelog", "title": "Changelog" }
+    ]
+  }
+]
